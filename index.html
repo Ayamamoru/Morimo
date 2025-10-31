@@ -14,7 +14,6 @@
     </style>
 </head>
 <body>
-    <script src="stuff.js"></script>
     <style>
         .header {
             text-align: center;
@@ -85,19 +84,20 @@
     </style>
 
     <div class="header">
-    <h1>Welcome to Morimo! Mo's personal corner of the internet :)</h1>
-    <p>Click the buttons to learn more!</p>
+    <h1>Welcome to Morimo!</h1>
+    <p>Mo's personal corner of the internet :)</p>
+    <p>Click the icons 2 learn more</p>
     </div>
 
     <div class="button-container">
-        <button>abt me</button>
+        <button class="window=button" onclick="OpenWindow('about')">abt me</button>
         <button>interests n hobbies</button>
-        <button>projects</button>
+        <button>prjcts</button>
         <button>art</button>
     </div>
     
     <div id="about" class="window">
-        <div class="window-header" onmousedown="startDrag(event, 'about')">
+        <div class="window-header" onmousedown="startDrag(event,'about')">
             <span class="window-title">abt me</span>
             <div class="window-controls">
                 <div class="window-control close-btn" onclick="closeWindow('about')">x</div>
@@ -107,6 +107,8 @@
             <h2>test test test test test</h2>
         </div>
     </div>
+
+    <script src="stuff.js"></script>
 
 
 </body>
