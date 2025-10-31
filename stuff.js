@@ -22,7 +22,7 @@ function OpenWindow(id, triggerEl) {
         const winRect = winEl.getBoundingClientRect();
 
         let left = btnRect.left + (btnRect.width / 2) - (winRect.width / 2);
-    let top = btnRect.bottom + 8 - 20;
+    let top = btnRect.bottom + 8 - 50;
 
         left = Math.max(8, Math.min(left, window.innerWidth - winRect.width - 8));
         top = Math.max(8, Math.min(top, window.innerHeight - winRect.height - 8));
