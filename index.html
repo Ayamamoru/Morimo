@@ -84,13 +84,14 @@
         }
 
         .window-header {
-            background: #ffffff;
+            /* green header so the white title is visible */
+            background: linear-gradient(to right, #6cc070 0%, #3fa34a 100%);
             padding: 8px 10px;
             cursor: move;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #1e4d7f;
+            border-bottom: 1px solid #2e6f36;
         }
 
         .window-title {
@@ -118,8 +119,11 @@
             transition: all 0.2s;
         }
         .close-btn {
-            background: #ffffff;
+            background: transparent;
             color: white;
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 2px 6px;
+            border-radius: 3px;
         }
 
         .close-btn:hover {

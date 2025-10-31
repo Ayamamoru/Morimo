@@ -2,10 +2,11 @@ let draggedElement = null;
 let offsetX = 0;
 let offsetY = 0;
 
-function openWindow(id) {
-    const window = document.getElementById(id);
-    window.classList.add('active');
-    bringToFront(window);
+function OpenWindow(id) {
+    const winEl = document.getElementById(id);
+    if (!winEl) return;
+    winEl.classList.add('active');
+    bringToFront(winEl);
 }
 
 function closeWindow(id) {
