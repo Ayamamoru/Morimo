@@ -21,3 +21,5 @@ How you made your project
 Struggles? What did you learn?
 - I knew it would be a challenge but uh the draggable and resizable windows that pop up when you click the buttons were a NIGHTMARE. To say the least, my airplane seat-mates were concerned/scared (???). I'm happy it didn't actually take too long to figure out though. 
 I strugggled a little with the js since I never really learned it but uh I think it turned out decently - huge learning curve in the ~4 hours spent on this project.
+
+ALSO - This does NOT look like a 2010s website - totally a work in progress that I will be adding to in the future.
