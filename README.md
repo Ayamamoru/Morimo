@@ -1,4 +1,5 @@
 # Morimo
+PREVIOUSLY KNOWN AS MOMOBAKERIE
 A personal website circa 2010
 
 Introducing oneself via cool code :3
