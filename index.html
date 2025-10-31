@@ -71,6 +71,16 @@
             padding: 8px 10px;
             cursor: move;
         }
+        .window-control {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .close-btn {
+            background: #ffffff;
+            color: white;
+        }
     </style>
 
     <div class="header">
@@ -92,6 +102,10 @@
         <div class="window-content">
             <h2>test test test test test</h2>
         </div>
+    </div>
+
+    <div class="window-controls">
+        <div class="window-control close-btn" onclick="closeWindow('about')">x</div>
     </div>
 </body>
 </html>
