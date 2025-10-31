@@ -46,20 +46,21 @@
 
         .window-button {
             padding: 12px 24px;
-            background: #97df8a;
+            background: #88cd43;
             border: 2px solid #569714;
             border-radius: 8px;
             cursor: pointer;
             font-family: inherit;
             font-size: 14px;
             font-weight: bold;
-            color: #245300;
+            color: #ffffff;
+            outline: 2px #71a937;
             box-shadow: 0 3px 6px rgba(29, 33, 30, 0.2);
             transition: all 0.2s;
         }
 
         .window-button:hover {
-            background: linear-gradient(to bottom, #dcf3d2 0%, #cbfc9b 100%);
+            background: linear-gradient(to bottom, #bae795 0%, #6da635 100%);
             transform: translateY(-2px);
             box-shadow: 0 5px 10px rgba (0,0,0,0.3);
         }
@@ -73,7 +74,7 @@
             position: absolute;
             width: 400px;
             background: white;
-            border: 2px solid #666;
+            border: 2px solid #71a937;
             border-radius: 8px 8px 0 0;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
             display: none;
@@ -84,14 +85,13 @@
         }
 
         .window-header {
-            /* green header so the white title is visible */
-            background: linear-gradient(to right, #6cc070 0%, #3fa34a 100%);
+            background: linear-gradient(to right, #88cd43 0%, #96e24a 100%);
             padding: 8px 10px;
             cursor: move;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #2e6f36;
+            border-bottom: 1px solid #466922;
         }
 
         .window-title {
@@ -134,18 +134,18 @@
             padding: 20px;
             max-height: 400px;
             overflow-y: auto;
-            color: #333;
+            color: #466922;
             line-height: 1.6;
         }
 
         .window-content h2 {
-            color: #4a90e2;
+            color: #71a937;
             margin-bottom: 15px;
             font-size: 22px;
         }
 
         .window-content h3 {
-            color: #2e5f9e;
+            color: #88cd43;
             margin-top: 15px;
             margin-bottom: 8px;
             font-size: 16px;
@@ -177,8 +177,9 @@
 <body>
     <div class="header">
     <h1>Welcome to Morimo!</h1>
-    <p>Mo's personal corner of the internet :)</p>
-    <p>Click the icons 2 learn more</p>
+    <p><b>Mo's personal corner of the internet :)</b></p>
+    <h4 style="color:#ffffff">Click the icons 2 learn more</p>
+    <h5 style="color:#c93030"> PS - this page is a WIP!</p>
     </div>
 
     <div class="button-container">
