@@ -79,6 +79,8 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
             display: none;
             overflow: hidden;
+            min-width: 220px;
+            min-height: 120px;
         }
         .window.active {
             display: block;
@@ -136,6 +138,33 @@
             overflow-y: auto;
             color: #466922;
             line-height: 1.6;
+        }
+
+        /* resize handle (bottom-right) */
+        .resize-handle {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            right: 8px;
+            bottom: 8px;
+            cursor: se-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.95;
+            border-radius: 3px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(0,0,0,0.04));
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .resize-handle:after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid rgba(0,0,0,0.18);
+            border-bottom: 2px solid rgba(0,0,0,0.18);
+            transform: rotate(45deg);
+            opacity: 0.9;
         }
 
         .window-content h2 {
@@ -199,6 +228,7 @@
         <div class="window-content">
             <h2>test test test test test</h2>
         </div>
+        <div class="resize-handle" data-resize="se" title="Resize"></div>
     </div>
 
     <div id="interests" class="window" style="left: 150px; top: 200px;">
@@ -219,6 +249,7 @@
             <h3>Test</h3>
             <p>Test</p>
         </div>
+        <div class="resize-handle" data-resize="se" title="Resize"></div>
     </div>
 
     <!-- Projects Window -->
@@ -240,6 +271,7 @@
             <h3>Test</h3>
             <p>Test</p>
         </div>
+        <div class="resize-handle" data-resize="se" title="Resize"></div>
     </div>
 
     <!-- art Window -->
@@ -262,6 +294,7 @@
             </ul>
             <p>Test</p>
         </div>
+        <div class="resize-handle" data-resize="se" title="Resize"></div>
     </div>
 
     <script src="stuff.js"></script>

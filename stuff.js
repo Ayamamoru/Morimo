@@ -1,6 +1,11 @@
 let draggedElement = null;
 let offsetX = 0;
 let offsetY = 0;
+let resizingElement = null;
+let resizeStartX = 0;
+let resizeStartY = 0;
+let startWidth = 0;
+let startHeight = 0;
 
 function OpenWindow(id, triggerEl) {
     const winEl = document.getElementById(id);
@@ -53,6 +58,46 @@ function startDrag(e, id) {
     document.addEventListener('mouseup', stopDrag);
 }
 
+function startResize(e, id) {
+    e.stopPropagation();
+    e.preventDefault();
+    resizingElement = document.getElementById(id);
+    if (!resizingElement) return;
+    const rect = resizingElement.getBoundingClientRect();
+    startWidth = rect.width;
+    startHeight = rect.height;
+    resizeStartX = e.clientX;
+    resizeStartY = e.clientY;
+    bringToFront(resizingElement);
+
+    document.addEventListener('mousemove', doResize);
+    document.addEventListener('mouseup', stopResize);
+}
+
+function doResize(e) {
+    if (!resizingElement) return;
+    const dx = e.clientX - resizeStartX;
+    const dy = e.clientY - resizeStartY;
+
+    let newW = Math.max(220, Math.round(startWidth + dx));
+    let newH = Math.max(120, Math.round(startHeight + dy));
+
+    const rect = resizingElement.getBoundingClientRect();
+    const left = rect.left;
+    const top = rect.top;
+    newW = Math.min(newW, Math.max(100, window.innerWidth - left - 8));
+    newH = Math.min(newH, Math.max(80, window.innerHeight - top - 8));
+
+    resizingElement.style.width = newW + 'px';
+    resizingElement.style.height = newH + 'px';
+}
+
+function stopResize() {
+    resizingElement = null;
+    document.removeEventListener('mousemove', doResize);
+    document.removeEventListener('mouseup', stopResize);
+}
+
 function drag(e) {
     if (draggedElement) {
         let newX = e.clientX - offsetX;
@@ -74,4 +119,10 @@ function stopDrag() {
 
 document.querySelectorAll('.window').forEach(window => {
     window.addEventListener('mousedown', () => bringToFront(window));
+});
+
+document.querySelectorAll('.resize-handle').forEach(handle => {
+    const win = handle.closest('.window');
+    if (!win) return;
+    handle.addEventListener('mousedown', (e) => startResize(e, win.id));
 });
