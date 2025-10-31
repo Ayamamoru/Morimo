@@ -4,25 +4,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayamamoru</title>
     <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family:'Courier New', Courier, monospace;
             background: linear-gradient(to bottom,#96e24a 0%, #e1ffd6 100%);
             min-height: 100vh;
             padding: 20px;
+            overflow:hidden;
         }
 
-    </style>
-</head>
-<body>
-    <style>
         .header {
             text-align: center;
             margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+
 
         }
         .header h1{
             color:white;
             font-size: 40px;
+            margin-bottom: 10px;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
         }
         .header p{
@@ -37,9 +44,7 @@
             margin-bottom: 20px;
         }
 
-        button, .window-button {
-            -webkit-appearance: none;
-            appearance: none;
+        .window-button {
             padding: 12px 24px;
             background: #97df8a;
             border: 2px solid #569714;
@@ -53,6 +58,17 @@
             transition: all 0.2s;
         }
 
+        .window-button:hover {
+            background: linear-gradient(to bottom, #f0f0f0 0%, #d9d9d9 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba (0,0,0,0.3);
+        }
+
+        .window-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
         .window {
             position: absolute;
             width: 400px;
@@ -61,6 +77,7 @@
             border-radius: 8px 8px 0 0;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
             display: none;
+            overflow: hidden;
         }
         .window.active {
             display: block;
@@ -70,19 +87,90 @@
             background: #ffffff;
             padding: 8px 10px;
             cursor: move;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e4d7f;
         }
+
+        .window-title {
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 6px;
+        }
+
         .window-control {
             width: 16px;
             height: 16px;
             border-radius: 3px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.2s;
         }
         .close-btn {
             background: #ffffff;
             color: white;
         }
-    </style>
 
+        .close-btn:hover {
+            background: linear-gradient(to bottom, #ff4040 0%, #c93030 100%);
+        }
+
+        .window-content {
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .window-content h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .window-content h3 {
+            color: #2e5f9e;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .window-content p {
+            margin-bottom: 12px;
+        }
+
+        .window-content ul {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .window-content li {
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .window {
+                width: 90%;
+                left: 5% !important;
+                top: 100px !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
     <div class="header">
     <h1>Welcome to Morimo!</h1>
     <p>Mo's personal corner of the internet :)</p>
@@ -90,13 +178,13 @@
     </div>
 
     <div class="button-container">
-        <button class="window=button" onclick="OpenWindow('about')">abt me</button>
-        <button>interests n hobbies</button>
-        <button>prjcts</button>
-        <button>art</button>
+        <button class="window-button" onclick="OpenWindow('about')">abt me</button>
+        <button class="window-button" onclick="OpenWindow('interests')">interests n hobbies</button>
+        <button class="window-button" onclick="OpenWindow('projects')">prjcts</button>
+        <button class="window-button" onclick="OpenWindow('art')">art</button>
     </div>
     
-    <div id="about" class="window">
+    <div id="about" class="window" style="left: 100px; top: 150px;">
         <div class="window-header" onmousedown="startDrag(event,'about')">
             <span class="window-title">abt me</span>
             <div class="window-controls">
