@@ -35,3 +35,16 @@ function stopDrag() {
     document.removeEventListener('mousemove',drag)
     document.removeEventListener('mouseup', stopDrag)
 }
+
+function drag(e) {
+    if (draggedElement) {
+        let newX = e.clientX - offsetX;
+        let newY = e.clientY - offsetY;
+
+        newX = Math.max(0,Math.min(newX, window.innerwidth - draggedElement.offsetWidth));
+        newY = Math.max(0, Math.min(newY, window.innerHeight - draggedElement.offsetHeight));
+
+        draggedElement.style.left = newX + 'px';
+        draggedElement.style.top = newY + 'px';
+    }
+}
