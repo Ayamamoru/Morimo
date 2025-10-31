@@ -53,6 +53,24 @@
             transition: all 0.2s;
         }
 
+        .window {
+            position: absolute;
+            width: 400px;
+            background:white;
+            border: 2px solid #666;
+            border-radius: 8px 8px 0,0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            display: none;
+        }
+        .window.active {
+            display:block;
+        }
+
+        .window-header {
+            background: #fffff
+            padding: 8px 10px;
+            cursor: move;
+        }
     </style>
 
     <div class="header">
