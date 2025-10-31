@@ -97,17 +97,17 @@
     </div>
     
     <div id="about" class="window">
-        <div class="window-header">
+        <div class="window-header" onmousedown="startDrag(event, 'about')">
             <span class="window-title">abt me</span>
+            <div class="window-controls">
+                <div class="window-control close-btn" onclick="closeWindow('about')">x</div>
+             </div>
         </div>
         <div class="window-content">
             <h2>test test test test test</h2>
         </div>
     </div>
 
-    <div class="window-controls">
-        <div class="window-control close-btn" onclick="closeWindow('about')">x</div>
-    </div>
 
 </body>
 </html>
