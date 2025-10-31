@@ -201,23 +201,56 @@
             }
         }
 
+        .footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            pointer-events: auto;
+            z-index: 0;
+        }
+
+        .footer a {
+            text-decoration: none;
+        }
+
+        .footer .link-btn {
+            padding: 8px 12px;
+            background:#96e24a;
+            border: 1px solid rgba(255,255,255,0.12);
+            color:#466922;
+            font-weight: 600;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            transition: transform 0.12s ease, background 0.12s;
+            font-family: inherit;
+        }
+
+        .footer .link-btn:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.12);
+        }
+
     </style>
 </head>
 <body>
     <div class="header">
     <h1>Welcome to Morimo!</h1>
     <p><b>Mo's personal corner of the internet :)</b></p>
-    <h4 style="color:#ffffff">Click the icons 2 learn more</p>
+    <h4 style="color:#ffffff">Click the icons 2 learn more -> windows r draggable + resizable!</p>
     <h5 style="color:#c93030"> PS - this page is a WIP!</p>
     </div>
 
     <div class="button-container">
     <button class="window-button" onclick="OpenWindow('about', this)">abt me</button>
-    <button class="window-button" onclick="OpenWindow('interests', this)">interests n hobbies</button>
-    <button class="window-button" onclick="OpenWindow('projects', this)">prjcts</button>
+    <button class="window-button" onclick="OpenWindow('hobbies', this)">hobbies</button>
+    <button class="window-button" onclick="OpenWindow('interests', this)">prjcts</button>
     <button class="window-button" onclick="OpenWindow('art', this)">art</button>
     </div>
-    
+    <!--abt-->
     <div id="about" class="window" style="left: 100px; top: 150px;">
         <div class="window-header" onmousedown="startDrag(event,'about')">
             <span class="window-title">abt me</span>
@@ -226,12 +259,47 @@
              </div>
         </div>
         <div class="window-content">
-            <h2>test test test test test</h2>
+            <h2>Holar</h2>
+            <p>I'm Mo :) AKA Selina Tung</p>
+            <p>I'm a coding newbie who's a fan of marimo moss, hence the colour scheme.</p>
+            <h3>Quick Facts:</h3>
+            <ul>
+                <li>favorite skl subject is science (physics my love)</li>
+                <li>lowk addicted to diet coke</li>
+                <li>ultimate frisbee enjoyer</li>
+                <li>taiwanese-canadian <i>(fun fact, this website was made on the airplane ride to taiwan from canada lol)</i></li>
+            </ul>
+        </div>
+        <div class="resize-handle" data-resize="se" title="Resize"></div>
+    </div>
+    <!--hobbies-->
+    <div id="hobbies" class="window" style="left: 150px; top: 200px;">
+        <div class="window-header" onmousedown="startDrag(event, 'hobbies')">
+            <span class="window-title">stuff i like 2 do</span>
+            <div class="window-controls">
+                <div class="window-control close-btn" onclick="closeWindow('hobbies')">×</div>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>yeppers, these r my hobbies</h2>
+            <h3>Ultimate (frisbee)</h3>
+            <p>absolutly love my ulti team at school and love playing in OCUA leagues - this is peak for me. love my skl ulti lineup, y'all are so awesome</p>
+            <h3>Curling</h3>
+            <p>i love curling w/ my school team, my coaches r awesome</p>
+            <h3>Gamin'</h3>
+            <p>i love horror games but hate playing alone (cause i get scared) so i usually default to minecraft rip</p>
+            <h3>Bakin'</h3>
+            <p>if you see me at a hackathon, feel free to hit me up for some cookies  (they're fire, trust)</p>
+            <h3>Roller bladin</h3>
+            <p>love roller blading, hate ottawa roads for not being good for rollerblading... currently learning slalom n figure skating tricks</p>
+            <h3>art</h3>
+            <p>i have an entire other window for it lololol</p>
         </div>
         <div class="resize-handle" data-resize="se" title="Resize"></div>
     </div>
 
-    <div id="interests" class="window" style="left: 150px; top: 200px;">
+    <!-- interests -->
+    <div id="interests" class="window" style="left: 200px; top: 250px;">
         <div class="window-header" onmousedown="startDrag(event, 'interests')">
             <span class="window-title">Test</span>
             <div class="window-controls">
@@ -239,42 +307,23 @@
             </div>
         </div>
         <div class="window-content">
-            <h2>Test</h2>
-            <h3>Test</h3>
-            <p>Test</p>
-            <h3>Test</h3>
-            <p>Test</p>
-            <h3>Test</h3>
-            <p>Test</p>
-            <h3>Test</h3>
-            <p>Test</p>
+            <h2>things i like yippee</h2>
+            <ul>
+                <li>low quality random websites (check out the rat-webs series on my github)</li>
+                <li>analog/vhs/indie horror - my favorite so far is liminal land~</li>
+                <li>game dev (normally i make games, but i needed to practice some js today)</li>
+                    <ul>
+                        <li>fun fact: I actually lowk hate coding but the dopamine after i finish a project is like woahhh</li>
+                    </ul>
+                <li>FISH i love drawing fish</li>
+                <li>writing + drawing :P</li>
+                <li>deltarune + undertale~</li>
+            </ul>
         </div>
         <div class="resize-handle" data-resize="se" title="Resize"></div>
     </div>
 
-    <!-- Projects Window -->
-    <div id="projects" class="window" style="left: 200px; top: 250px;">
-        <div class="window-header" onmousedown="startDrag(event, 'projects')">
-            <span class="window-title">Test</span>
-            <div class="window-controls">
-                <div class="window-control close-btn" onclick="closeWindow('projects')">×</div>
-            </div>
-        </div>
-        <div class="window-content">
-            <h2>Test</h2>
-            <h3>Test</h3>
-            <p>Test</p>
-            <h3>Test</h3>
-            <p>Test</p>
-            <h3>Test</h3>
-            <p>Test</p>
-            <h3>Test</h3>
-            <p>Test</p>
-        </div>
-        <div class="resize-handle" data-resize="se" title="Resize"></div>
-    </div>
-
-    <!-- art Window -->
+    <!-- arts -->
     <div id="art" class="window" style="left: 250px; top: 300px;">
         <div class="window-header" onmousedown="startDrag(event, 'art')">
             <span class="window-title">Test</span>
@@ -283,19 +332,24 @@
             </div>
         </div>
         <div class="window-content">
-            <h2>Test</h2>
-            <p>Test</p>
-            <h3>Test</h3>
+            <h2>my art stuffs!</h2>
+            <p>i recently swapped from only traditional to digital too, so i figured i would share some!</p>
             <ul>
                 <li>Test</li>
                 <li>Test</li>
                 <li>Test</li>
                 <li>Test</li>
             </ul>
-            <p>Test</p>
+            <p>not much rn but i'm gettin there</p>
         </div>
         <div class="resize-handle" data-resize="se" title="Resize"></div>
     </div>
+    
+    <footer class="footer">
+        <a class="link-btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a class="link-btn" href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a>
+        <a class="link-btn" href="mailto:you@example.com">Email</a>
+    </footer>
 
     <script src="stuff.js"></script>
 
