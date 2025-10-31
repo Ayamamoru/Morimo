@@ -2,11 +2,34 @@ let draggedElement = null;
 let offsetX = 0;
 let offsetY = 0;
 
-function OpenWindow(id) {
+function OpenWindow(id, triggerEl) {
     const winEl = document.getElementById(id);
     if (!winEl) return;
+
+    if (!triggerEl) {
+        triggerEl = Array.from(document.querySelectorAll('.window-button')).find(b => {
+            const on = b.getAttribute('onclick') || '';
+            return on.indexOf("'" + id + "'") !== -1 || on.indexOf('"' + id + '"') !== -1 || on.indexOf(id) !== -1;
+        });
+    }
+
     winEl.classList.add('active');
     bringToFront(winEl);
+
+    if (triggerEl && typeof triggerEl.getBoundingClientRect === 'function') {
+        const btnRect = triggerEl.getBoundingClientRect();
+
+        const winRect = winEl.getBoundingClientRect();
+
+        let left = btnRect.left + (btnRect.width / 2) - (winRect.width / 2);
+    let top = btnRect.bottom + 8 - 20;
+
+        left = Math.max(8, Math.min(left, window.innerWidth - winRect.width - 8));
+        top = Math.max(8, Math.min(top, window.innerHeight - winRect.height - 8));
+
+        winEl.style.left = left + 'px';
+        winEl.style.top = top + 'px';
+    }
 }
 
 function closeWindow(id) {

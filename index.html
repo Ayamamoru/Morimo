@@ -183,10 +183,10 @@
     </div>
 
     <div class="button-container">
-        <button class="window-button" onclick="OpenWindow('about')">abt me</button>
-        <button class="window-button" onclick="OpenWindow('interests')">interests n hobbies</button>
-        <button class="window-button" onclick="OpenWindow('projects')">prjcts</button>
-        <button class="window-button" onclick="OpenWindow('art')">art</button>
+    <button class="window-button" onclick="OpenWindow('about', this)">abt me</button>
+    <button class="window-button" onclick="OpenWindow('interests', this)">interests n hobbies</button>
+    <button class="window-button" onclick="OpenWindow('projects', this)">prjcts</button>
+    <button class="window-button" onclick="OpenWindow('art', this)">art</button>
     </div>
     
     <div id="about" class="window" style="left: 100px; top: 150px;">
@@ -198,6 +198,69 @@
         </div>
         <div class="window-content">
             <h2>test test test test test</h2>
+        </div>
+    </div>
+
+    <div id="interests" class="window" style="left: 150px; top: 200px;">
+        <div class="window-header" onmousedown="startDrag(event, 'interests')">
+            <span class="window-title">Test</span>
+            <div class="window-controls">
+                <div class="window-control close-btn" onclick="closeWindow('interests')">×</div>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>Test</h2>
+            <h3>Test</h3>
+            <p>Test</p>
+            <h3>Test</h3>
+            <p>Test</p>
+            <h3>Test</h3>
+            <p>Test</p>
+            <h3>Test</h3>
+            <p>Test</p>
+        </div>
+    </div>
+
+    <!-- Projects Window -->
+    <div id="projects" class="window" style="left: 200px; top: 250px;">
+        <div class="window-header" onmousedown="startDrag(event, 'projects')">
+            <span class="window-title">Test</span>
+            <div class="window-controls">
+                <div class="window-control close-btn" onclick="closeWindow('projects')">×</div>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>Test</h2>
+            <h3>Test</h3>
+            <p>Test</p>
+            <h3>Test</h3>
+            <p>Test</p>
+            <h3>Test</h3>
+            <p>Test</p>
+            <h3>Test</h3>
+            <p>Test</p>
+        </div>
+    </div>
+
+    <!-- art Window -->
+    <div id="art" class="window" style="left: 250px; top: 300px;">
+        <div class="window-header" onmousedown="startDrag(event, 'art')">
+            <span class="window-title">Test</span>
+            <div class="window-controls">
+                <div class="window-control close-btn" onclick="closeWindow('art')">×</div>
+            </div>
+        </div>
+        <div class="window-content">
+            <h2>Test</h2>
+            <p>Test</p>
+            <h3>Test</h3>
+            <ul>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+            </ul>
+            <p>Test</p>
         </div>
     </div>
 
