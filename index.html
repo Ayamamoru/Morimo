@@ -249,7 +249,6 @@
     <button class="window-button" onclick="OpenWindow('hobbies', this)">hobbies</button>
     <button class="window-button" onclick="OpenWindow('interests', this)">interests</button>
     <button class="window-button" onclick="OpenWindow('art', this)">art</button>
-    <button class="window-button" onclick="OpenWindow('cassetteWindow', this)">music</button>
     </div>
     <!--abt-->
     <div id="about" class="window" style="left: 100px; top: 150px;">
@@ -367,45 +366,6 @@
         </div>
         <div class="resize-handle" data-resize="se" title="Resize"></div>
     </div>
-
-        <!-- Cassette Music Player Window -->
-<div id="cassetteWindow" class="window" style="left: 300px; top: 150px;">
-    <div class="window-header" onmousedown="startDrag(event, 'cassetteWindow')">
-        <span class="window-title">cassette player</span>
-        <div class="window-controls">
-            <div class="window-control close-btn" onclick="closeWindow('cassetteWindow')">×</div>
-        </div>
-    </div>
-
-    <div class="window-content" style="padding:0;">
-        <!-- Your cassette HTML goes here -->
-        <iframe src="cassette.html"
-                style="width:100%; height:430px; border:none; overflow:hidden;"></iframe>
-    </div>
-
-    <div class="resize-handle" data-resize="se" title="Resize"></div>
-</div>
-
-<div id="cassetteFloatBtn" onclick="OpenWindow('cassetteWindow')" 
-     style="
-        position:fixed;
-        top:12px; left:12px;
-        width:32px; height:32px;
-        background:#111;
-        color:#9fe88a;
-        font-size:20px;
-        border-radius:6px;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        cursor:pointer;
-        border:2px solid #71a937;
-        box-shadow:0 3px 8px rgba(0,0,0,0.3);
-        z-index:9999;
-     ">
-    ♫
-</div>
-
     
     <footer class="footer">
         <a class="link-btn" href="https://github.com/Ayamamoru" target="_blank" rel="noopener">github</a>
