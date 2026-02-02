@@ -249,6 +249,7 @@
     <button class="window-button" onclick="OpenWindow('hobbies', this)">hobbies</button>
     <button class="window-button" onclick="OpenWindow('interests', this)">interests</button>
     <button class="window-button" onclick="OpenWindow('art', this)">art</button>
+    <button class="window-button" onclick="OpenWindow('code', this)">code</button>
     </div>
     <!--abt-->
     <div id="about" class="window" style="left: 100px; top: 150px;">
@@ -366,7 +367,41 @@
         </div>
         <div class="resize-handle" data-resize="se" title="Resize"></div>
     </div>
-    
+
+    <!--code-->
+    <div id="code" class="window" style="left: 100px; top: 150px;">
+        <div class="window-header" onmousedown="startDrag(event,'code')">
+            <span class="window-title">code stats</span>
+            <div class="window-controls">
+                <div class="window-control close-btn" onclick="closeWindow('code')">x</div>
+             </div>
+        </div>
+        <div class="window-content">
+            <h2>2025</h2>
+            <p>I first learned to code at Scrapyard Ottawa (March 15-16) with a simple Ren'py game</p>
+            <p>Since then I've made <b>17</b> projects, <b>6</b> of which were at hackathons!</p>
+            <h2>In 2025 I went did:</h2>
+            <ol>
+                <li>Scrapyard Ottawa (March 15-16)</li>
+                <li>Lockdown</li>
+                <li>JPEG</li>
+                <li>Daydream Ottawa</li>
+                <li>Daydream Global (Online)</li>
+                <li>Hackclub Athena (Online)</li>
+                <li>Parthenon NYC</li>
+            </ol>
+            <h3>Current projects:</h3>
+            <ul>
+                <li>Completing CyberStart Canada!</li>
+                <li>Earning my CC certificate!</li>
+                <li>Working on a game for Hackclub (Athena) Sleepover</li>
+                <li>Working on my birthday/valentines project!</li>
+                <li>Organizing Campfire Ottawa~</li>
+            </ul>
+        </div>
+        <div class="resize-handle" data-resize="se" title="Resize"></div>
+    </div>
+
     <footer class="footer">
         <a class="link-btn" href="https://github.com/Ayamamoru" target="_blank" rel="noopener">github</a>
         <a class="link-btn" href="https://www.instagram.com/selina_tung04?igsh=MWZ5MmN1MHM1YnNocA%3D%3D&utm_source=qr" target="_blank" rel="noopener">instagram</a>
